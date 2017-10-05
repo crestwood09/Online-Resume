@@ -86,12 +86,12 @@ $("#header").append(formattedWelcomeMessage);
 if(bio.skills.length > 0) {
 	$("#header").append(HTMLskillsStart);
 
-	for(i in bio.skills) {
+	for(var i in bio.skills) {
 		$('#skills').append(HTMLskills.replace("%data%", bio.skills[i]));
 	}
 }
 
-for(i in formattedContactInfo) {
+for(var i in formattedContactInfo) {
 	$("#topContacts").append(formattedContactInfo[i]);
 	$("footerContacts").append(formattedContactInfo[i]);
 }
@@ -102,7 +102,7 @@ function displayWork(){
 
 		$("#workExperience").append(HTMLworkStart);
 
-		for (i in work.jobs) {
+		for (var i in work.jobs) {
 			var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[i].employer);
 			var formattedTitle = HTMLworkTitle.replace("%data%",work.jobs[i].title);
 			var formattedWorkLocation = HTMLworkLocation.replace("%data%",work.jobs[i].location);
@@ -123,7 +123,7 @@ displayWork();
 
 projects.display = function() {
 	if(projects.projects.length > 0) {
-		for (i in projects.projects) {
+		for (var i in projects.projects) {
 			$("#projects").append(HTMLprojectStart);
 
 			var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[i].title);
@@ -134,20 +134,20 @@ projects.display = function() {
 			$(".project-entry:last").append(formattedDates);
 			$(".project-entry:last").append(formattedDescription);
 
-			for (img in projects.projects[i].images) {
+			for (var img in projects.projects[i].images) {
 					var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[i].images[img]);
 					$(".project-entry:last").append(formattedImage);
 			}
 
 		}
 	}
-}
+};
 
 projects.display();
 
 education.display = function() {
 	if(education.schools.length > 0) {
-		for(i in education.schools) {
+		for(var i in education.schools) {
 			$("#education").append(HTMLschoolStart);
 
 			var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[i].name);
@@ -163,7 +163,7 @@ education.display = function() {
 
 		}
 	}
-}
+};
 
 education.display();
 
